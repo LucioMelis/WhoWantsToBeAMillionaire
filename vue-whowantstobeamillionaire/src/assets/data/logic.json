@@ -1,0 +1,57 @@
+[
+    {
+        "question": "Quanti titoli mondiali di Formula 1 ha vinto il pilota inglese Lewis Hamilton?",
+        "answer": [
+            "5",
+            "8",
+            "7",
+            "6"
+        ],
+        "correctAnswer": "7",
+        "level": "Facile"
+    },
+    {
+        "question": "Qual'è il nome del protagonista dell'anime One Piece",
+        "answer": [
+            "Marshall D. Teach",
+            "Shanks",
+            "Pollicino",
+            "Monkey D. Luffy"
+        ],
+        "correctAnswer": "Monkey D. Luffy",
+        "level": "Facile"
+    },
+    {
+        "question": "Dov'è stata usata la prima bomba atomica in un conflitto armato?",
+        "answer": [
+            "Corea del Sud",
+            "Giappone",
+            "Hawaii",
+            "Stati Uniti"
+        ],
+        "correctAnswer": "Giappone",
+        "level": "Facile"
+    },
+    {
+        "question": "qual'è la Capitale della Spagna?",
+        "answer": [
+            "Corea del Sud",
+            "Giappone",
+            "Hawaii",
+            "Stati Uniti"
+        ],
+        "correctAnswer": "Giappone",
+        "level": "Facile"
+    },
+    {
+        "question": "Dov'è stata usata la prima bomba atomica in un conflitto armato?",
+        "answer": [
+            "Corea del Sud",
+            "Giappone",
+            "Hawaii",
+            "Stati Uniti"
+        ],
+        "correctAnswer": "Giappone",
+        "level": "Facile"
+    }
+]
