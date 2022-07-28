@@ -33,7 +33,7 @@
         "level": "Facile"
     },
     {
-        "question": "qual'è la Capitale della Spagna?",
+        "question": "Qual'è la Capitale della Spagna?",
         "answer": [
             "Corea del Sud",
             "Giappone",
@@ -44,14 +44,190 @@
         "level": "Facile"
     },
     {
-        "question": "Dov'è stata usata la prima bomba atomica in un conflitto armato?",
+        "question": "Da dove provengono i Giochi Olimpici?",
         "answer": [
-            "Corea del Sud",
-            "Giappone",
-            "Hawaii",
+            "Grecia",
+            "Italia",
+            "Francia",
             "Stati Uniti"
         ],
-        "correctAnswer": "Giappone",
+        "correctAnswer": "Grecia",
         "level": "Facile"
+    },
+    {
+        "question": "Come si chiamava il ciclista soprannominato 'Il campionissimo'?",
+        "answer": [
+            "Marco Pantani",
+            "Fausto Coppi",
+            "Lance Armstrong",
+            "Eddy Merckx"
+        ],
+        "correctAnswer": "Fausto Coppi",
+        "level": "Facile"
+    },
+    {
+        "question": "Chi è l'autore de 'L'Odissea'?",
+        "answer": [
+            "Omero",
+            "Erodoto",
+            "Aristofane",
+            "Euripide"
+        ],
+        "correctAnswer": "Omero",
+        "level": "Facile"
+    },
+    {
+        "question": "Da quale lingua deriva lo spagnolo?",
+        "answer": [
+            "Greco",
+            "Latino",
+            "Inglese",
+            "Russo"
+        ],
+        "correctAnswer": "Latino",
+        "level": "Medio"
+    },
+    {
+        "question": "Di quale gruppo musicale appartiene la canzone 'Let It Be'?",
+        "answer": [
+            "Pink Floyd",
+            "Queen",
+            "Beatles",
+            "Guns N' Roses"
+        ],
+        "correctAnswer": "Beatles",
+        "level": "Medio"
+    },
+    {
+        "question": "Come è morto Luigi XVI di Francia?",
+        "answer": [
+            "Fu avvelenato",
+            "Fu impiccato",
+            "Fu messo al rogo",
+            "Fu decapitato"
+        ],
+        "correctAnswer": "Fu decapitato",
+        "level": "Medio"
+    },
+    {
+        "question": "In che anno è stata la scoperta dell'America?",
+        "answer": [
+            "1492",
+            "1490",
+            "1493",
+            "1941"
+        ],
+        "correctAnswer": "1492",
+        "level": "Medio"
+    },
+    {
+        "question": "Lo stretto di Gibilterra separa la Spagna da quale paese?",
+        "answer": [
+            "Algeria",
+            "Marocco",
+            "Libia",
+            "Nigeria"
+        ],
+        "correctAnswer": "Marocco",
+        "level": "Medio"
+    },
+    {
+        "question": "Quale è stato il primo paese ad approvare il suffragio femminile?",
+        "answer": [
+            "Nuova Zelanda",
+            "Inghilterra",
+            "Italia",
+            "Stati Uniti"
+        ],
+        "correctAnswer": "Nuova Zelanda",
+        "level": "Medio"
+    },
+    {
+        "question": "Qual è la montagna più alta d'Europa e dove si trova?",
+        "answer": [
+            "Monte Dykh-Tau, Georgia",
+            "Monte Bianco, Italia",
+            "Monte Mulhacén, Spagna",
+            "Monte Elbrus, Russia"
+        ],
+        "correctAnswer": "Monte Elbrus, Russia",
+        "level": "Medio"
+    },
+    {
+        "question": "Chi ha cantato la canzone 'Candle In The Wind' alla principessa Diana?",
+        "answer": [
+            "Lionel Richie",
+            "Prince",
+            "Elton John",
+            "Bruce Springsteen"
+        ],
+        "correctAnswer": "Elton John",
+        "level": "Difficile"
+    },
+    {
+        "question": "A quanti anni corrisponde un lustro?",
+        "answer": [
+            "3 Anni",
+            "4 Anni",
+            "5 Anni",
+            "6 Anni"
+        ],
+        "correctAnswer": "5 Anni",
+        "level": "Difficile"
+    },
+    {
+        "question": "In che anno è nato Harry Potter?",
+        "answer": [
+            "25 Giugno 1990",
+            "31 Luglio 1980",
+            "2 Agosto 1988",
+            "6 Luglio del 2001"
+        ],
+        "correctAnswer": "31 Luglio 1980",
+        "level": "Difficile"
+    },
+    {
+        "question": "Quanti anni è durata la Guerra dei 100 anni?",
+        "answer": [
+            "116 anni",
+            "100 anni",
+            "107 anni",
+            "99 anni"
+        ],
+        "correctAnswer": "116 anni",
+        "level": "Difficile"
+    },
+    {
+        "question": "Dove è nato il pittore Gustav Klimt?",
+        "answer": [
+            "Russia",
+            "Austria",
+            "Svizzera",
+            "Olanda"
+        ],
+        "correctAnswer": "Austria",
+        "level": "Difficile"
+    },
+    {
+        "question": "Chi è stato il primo scalatore a scalare l'Everest?",
+        "answer": [
+            "Junko Tabei",
+            "Andrzej Bargiel",
+            "Colin Haley",
+            "Nirmal 'Nims' Purja"
+        ],
+        "correctAnswer": "Junko Tabei",
+        "level": "Difficile"
+    },
+    {
+        "question": "Quando si sono estinti i dinosauri?",
+        "answer": [
+            "Circa 65 milioni di anni fa",
+            "circa 55 milioni di anni fa",
+            "circa 45 milioni di anni fa",
+            "circa 75 milioni di anni fa"
+        ],
+        "correctAnswer": "Circa 65 milioni di anni fa",
+        "level": "Difficile"
     }
 ]
