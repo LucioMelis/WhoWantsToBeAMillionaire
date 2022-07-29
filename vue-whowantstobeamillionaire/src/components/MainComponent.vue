@@ -22,10 +22,20 @@
       <!-- SEZIONE SCALATA -->
       <div class="section-progress">
         <!-- Aiuti da casa  -->
-        <div class="d-flex flex-wrap justify-content-around">
+        <div class="d-flex flex-wrap justify-content-around py-4">
           <button class="btn lm-btn">Aiuto da casa</button>
           <button class="btn lm-btn">50 : 50</button>
         </div>
+        <!-- Scalata per il Milione -->
+        <ul>
+          <li>500 &euro;</li>
+          <li>3.000 &euro;</li>
+          <li>20.000 &euro;</li>
+          <li>70.000 &euro;</li>
+          <li>150.000&euro;</li>
+          <li>300.000 &euro;</li>
+          <li>1.000.000 &euro;</li>
+        </ul>
       </div>
       <!-- SEZIONE DOMANDE  -->
       <div class="section-question">sezione Domande</div>
