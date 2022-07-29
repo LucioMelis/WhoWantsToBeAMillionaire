@@ -20,20 +20,12 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-.background-logo {
-  background-color: #0e0f8c;
-}
-.background-main {
-  background-color: #11093a;
-}
-.text-question {
-  color: white;
 }
 </style>
