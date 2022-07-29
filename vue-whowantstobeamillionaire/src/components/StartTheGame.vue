@@ -19,7 +19,11 @@
       </ul>
     </div>
     <!-- SEZIONE DOMANDE  -->
-    <div class="section-question">sezione Domande</div>
+    <div class="section-question">
+      <div v-for="(item, index) in questionEasy" :key="item + index">
+        <h3>{{ item.question }}</h3>
+      </div>
+    </div>
   </div>
 </template>
 
