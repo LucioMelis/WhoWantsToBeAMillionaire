@@ -33,4 +33,7 @@ export default {
 .background-main {
   background-color: #11093a;
 }
+.text-question {
+  color: white;
+}
 </style>

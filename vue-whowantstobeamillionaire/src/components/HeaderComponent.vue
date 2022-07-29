@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="background-logo py-5 text-center">
+    <div class="background-logo py-3 text-center">
       <img
         class="image-size"
         src="../assets/chivuolesseremilionarioLogo.png"
