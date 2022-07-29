@@ -3,7 +3,12 @@
     <!-- SCHERMATA INIZIALE -->
     <HomeScreen v-if="!start" :start="start" @onChangeBoolean="changeValue" />
     <!-- SCHERMATA GIOCO AVVIATO  -->
-    <StartTheGame v-else />
+    <StartTheGame
+      v-else
+      :questionEasy="questionEasy"
+      :questionMedium="questionMedium"
+      :questionHard="questionHard"
+    />
   </div>
 </template>
 
@@ -18,11 +23,26 @@ export default {
     return {
       question,
       start: false,
+      questionEasy: [],
+      questionMedium: [],
+      questionHard: [],
     };
   },
   components: {
     HomeScreen,
     StartTheGame,
+  },
+  mounted() {
+    this.questionEasy = this.question.filter((item) => item.level === "Facile");
+    this.questionMedium = this.question.filter(
+      (item) => item.level === "Medio"
+    );
+    this.questionHard = this.question.filter(
+      (item) => item.level === "Difficile"
+    );
+    // console.log("facile", this.questionEasy);
+    // console.log("medio", this.questionMedium);
+    // console.log("difficile", this.questionHard);
   },
   methods: {
     changeValue(boolean) {

@@ -26,6 +26,11 @@
 <script>
 export default {
   name: "StartTheGame",
+  props: {
+    questionEasy: Array,
+    questionMedium: Array,
+    questionHard: Array,
+  },
   data() {
     return {
       jackpots: [
