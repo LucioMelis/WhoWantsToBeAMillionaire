@@ -4,19 +4,19 @@
     <div class="section-progress">
       <!-- Aiuti da casa  -->
       <div class="d-flex flex-wrap justify-content-around py-4">
-        <button class="btn lm-btn">Aiuto da casa</button>
-        <button class="btn lm-btn">50 : 50</button>
+        <div class="help">Aiuto da casa</div>
+        <div class="help">50 : 50</div>
       </div>
       <!-- Scalata per il Milione -->
-      <div class="d-flex flex-column flex-wrap align-items-center py-3">
-        <div>500 &euro;</div>
-        <div>3.000 &euro;</div>
-        <div>20.000 &euro;</div>
-        <div>70.000 &euro;</div>
-        <div>150.000&euro;</div>
-        <div>300.000 &euro;</div>
-        <div>1.000.000 &euro;</div>
-      </div>
+      <ul class="d-flex flex-column flex-wrap">
+        <li
+          v-for="(jackpot, index) in jackpots"
+          :key="index"
+          class="text-center mx-3"
+        >
+          {{ jackpot }} &euro;
+        </li>
+      </ul>
     </div>
     <!-- SEZIONE DOMANDE  -->
     <div class="section-question">sezione Domande</div>
@@ -26,6 +26,19 @@
 <script>
 export default {
   name: "StartTheGame",
+  data() {
+    return {
+      jackpots: [
+        "500",
+        "3.000",
+        "20.000",
+        "70.000",
+        "150.000",
+        "300.000",
+        "1.000.000",
+      ],
+    };
+  },
 };
 </script>
 
@@ -39,6 +52,13 @@ export default {
   .section-progress {
     border: 1px dashed red;
     flex-grow: 1;
+    .help {
+      padding: 5px 10px 5px 10px;
+      border: 2px solid white;
+      border-radius: 90px;
+      background-color: orange;
+      cursor: pointer;
+    }
   }
   .section-question {
     border: 1px dashed red;
