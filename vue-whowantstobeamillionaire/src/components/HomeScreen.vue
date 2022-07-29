@@ -7,7 +7,7 @@
       <h4 class="focus-in-contract-bck">Clicca per iniziare il gioco</h4>
       <div class="mt-5">
         <button
-          @click="$emit('onChangeBoolean', startGame)"
+          @click="$emit('onChangeBoolean', start)"
           class="btn lm-btn rotate-scale-down"
         >
           Inizia il Gioco
@@ -21,7 +21,7 @@
 export default {
   name: "HomeScreen",
   props: {
-    startGame: Boolean,
+    start: Boolean,
   },
 };
 </script>

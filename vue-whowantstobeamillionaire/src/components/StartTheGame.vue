@@ -8,7 +8,7 @@
         <button class="btn lm-btn">50 : 50</button>
       </div>
       <!-- Scalata per il Milione -->
-      <div class="d-flex flex-column flex-wrap align-items-center py-5">
+      <div class="d-flex flex-column flex-wrap align-items-center py-3">
         <div>500 &euro;</div>
         <div>3.000 &euro;</div>
         <div>20.000 &euro;</div>

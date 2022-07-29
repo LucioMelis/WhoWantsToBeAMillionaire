@@ -1,11 +1,7 @@
 <template>
   <div class="container-main">
     <!-- SCHERMATA INIZIALE -->
-    <HomeScreen
-      v-if="!startGame"
-      :startGame="startGame"
-      @onChangeBoolean="changeValue"
-    />
+    <HomeScreen v-if="!start" :start="start" @onChangeBoolean="changeValue" />
     <!-- SCHERMATA GIOCO AVVIATO  -->
     <StartTheGame v-else />
   </div>
@@ -21,7 +17,7 @@ export default {
   data() {
     return {
       question,
-      startGame: false,
+      start: false,
     };
   },
   components: {
@@ -31,7 +27,7 @@ export default {
   methods: {
     changeValue(boolean) {
       boolean = true;
-      this.startGame = boolean;
+      this.start = boolean;
     },
   },
 };
