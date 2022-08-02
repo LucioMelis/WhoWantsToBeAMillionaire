@@ -62,6 +62,7 @@ export default {
         "300.000",
         "1.000.000",
       ],
+      currentQuestion: 0,
       playerProgress: 0,
       question: [],
     };
@@ -105,7 +106,6 @@ export default {
       // console.log(answer);
       // console.log(this.question[index].correctAnswer);
       console.log("indice", index);
-      this.currentQuestion = index;
       if (answer === this.question[index].correctAnswer) {
         this.playerProgress++;
         this.startGame();
