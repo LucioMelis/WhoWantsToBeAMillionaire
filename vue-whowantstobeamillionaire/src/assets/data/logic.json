@@ -35,10 +35,10 @@
     {
         "question": "Qual'è la Capitale della Spagna?",
         "answer": [
-            "Corea del Sud",
-            "Giappone",
-            "Hawaii",
-            "Stati Uniti"
+            "Barcellona",
+            "Siviglia",
+            "Madrid",
+            "Valencia"
         ],
         "correctAnswer": "Giappone",
         "level": "Facile"

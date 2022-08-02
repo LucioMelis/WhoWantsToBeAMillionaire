@@ -20,9 +20,23 @@
     </div>
     <!-- SEZIONE DOMANDE  -->
     <div class="section-question">
-      <div v-if="progress()">
+      <div class="container-question">
         <div v-for="(item, index) in question" :key="item + index">
-          <h3>{{ item.question }}</h3>
+          <h4 class="question background-logo">
+            {{ item.question }}
+          </h4>
+          <!-- Container delle risposte  -->
+          <div class="answer">
+            <div
+              class="single-answer col-5 background-logo"
+              v-for="answer in item.answer"
+              :key="answer"
+            >
+              <p @click="clickedAnswer(answer, index)">
+                {{ answer }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -87,7 +101,22 @@ export default {
       }
       console.log(this.question);
     },
-    progress() {},
+    clickedAnswer(answer, index) {
+      // console.log(answer);
+      // console.log(this.question[index].correctAnswer);
+      console.log("indice", index);
+      this.currentQuestion = index;
+      if (answer === this.question[index].correctAnswer) {
+        this.playerProgress++;
+        this.startGame();
+        console.log(
+          "risposta esatta il progresso giocatore è",
+          this.playerProgress
+        );
+      } else {
+        console.log("risposta sbagliata Gioco Terminato");
+      }
+    },
   },
 };
 </script>
@@ -113,6 +142,36 @@ export default {
   .section-question {
     border: 1px dashed red;
     flex-grow: 2;
+    .container-question {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      .question {
+        border: 1px solid white;
+        padding: 5px 0 !important;
+        border-radius: 90px;
+        margin: 0px 5px 0px 5px !important;
+      }
+      .answer {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        row-gap: 20px;
+        padding-top: 50px;
+        .single-answer {
+          border: 1px solid white;
+          padding: 5px 0;
+          border-radius: 90px;
+          p {
+            cursor: pointer;
+          }
+        }
+      }
+    }
   }
 }
 </style>
