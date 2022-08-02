@@ -20,8 +20,10 @@
     </div>
     <!-- SEZIONE DOMANDE  -->
     <div class="section-question">
-      <div v-for="(item, index) in questionEasy" :key="item + index">
-        <h3>{{ item.question }}</h3>
+      <div v-if="progress()">
+        <div v-for="(item, index) in question" :key="item + index">
+          <h3>{{ item.question }}</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -46,7 +48,46 @@ export default {
         "300.000",
         "1.000.000",
       ],
+      playerProgress: 0,
+      question: [],
     };
+  },
+  mounted() {
+    this.startGame();
+  },
+  methods: {
+    startGame() {
+      // this.questionEasy[Math.floor(Math.random() * this.questionEasy.length)];
+      while (this.question.length < 3) {
+        let stepEasy =
+          this.questionEasy[
+            Math.floor(Math.random() * this.questionEasy.length)
+          ];
+        if (!this.question.includes(stepEasy)) {
+          this.question.push(stepEasy);
+        }
+      }
+      while (this.question.length < 5) {
+        let stepMedium =
+          this.questionMedium[
+            Math.floor(Math.random() * this.questionMedium.length)
+          ];
+        if (!this.question.includes(stepMedium)) {
+          this.question.push(stepMedium);
+        }
+      }
+      while (this.question.length < 7) {
+        let stepHard =
+          this.questionHard[
+            Math.floor(Math.random() * this.questionHard.length)
+          ];
+        if (!this.question.includes(stepHard)) {
+          this.question.push(stepHard);
+        }
+      }
+      console.log(this.question);
+    },
+    progress() {},
   },
 };
 </script>
