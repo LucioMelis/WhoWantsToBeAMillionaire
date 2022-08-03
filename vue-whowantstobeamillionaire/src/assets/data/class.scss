@@ -27,6 +27,70 @@ li {
     background-color: #0e0f8c;
 }
 
+// CLASSE DIV PER LA RISPOSTA CLICCATA
+.animate-flicker {
+    -webkit-animation: flickerAnimation .5s infinite;
+    -moz-animation: flickerAnimation .5s infinite;
+    -o-animation: flickerAnimation .5s infinite;
+    animation: flickerAnimation .5s infinite;
+}
+
+@keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes flickerAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 // ANIMAZIONE PROGRESS 
 .scale-up-hor-center {
     -webkit-animation: scale-up-hor-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;

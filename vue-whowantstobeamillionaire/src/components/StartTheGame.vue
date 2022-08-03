@@ -1,7 +1,7 @@
 <template>
   <div class="play">
     <!-- SEZIONE SCALATA -->
-    <div class="section-progress">
+    <div class="section-progress scale-up-ver-center">
       <!-- Aiuti da casa  -->
       <div class="d-flex flex-wrap justify-content-around py-4">
         <div class="help">Aiuto da casa</div>
@@ -20,19 +20,24 @@
     </div>
     <!-- SEZIONE DOMANDE  -->
     <div class="section-question">
-      <div class="container-question">
+      <div class="container-question scale-up-hor-right">
         <div v-for="(item, index) in question" :key="item + index">
-          <h4 class="question background-logo">
+          <h4 v-if="playerProgress === index" class="question background-logo">
             {{ item.question }}
           </h4>
           <!-- Container delle risposte  -->
-          <div class="answer">
+          <div v-if="playerProgress === index" class="answer">
             <div
-              class="single-answer col-5 background-logo"
-              v-for="answer in item.answer"
-              :key="answer"
+              :class="[
+                'single-answer',
+                'col-5 background-logo',
+                addClass(index),
+              ]"
+              v-for="(answer, indiceElemento) in item.answer"
+              :key="indiceElemento"
+              @click="clickedAnswer(answer, index)"
             >
-              <p @click="clickedAnswer(answer, index)">
+              <p>
                 {{ answer }}
               </p>
             </div>
@@ -65,6 +70,8 @@ export default {
       currentQuestion: 0,
       playerProgress: 0,
       question: [],
+      clicked: false,
+      indexClicked: 0,
     };
   },
   mounted() {
@@ -103,18 +110,20 @@ export default {
       console.log(this.question);
     },
     clickedAnswer(answer, index) {
-      // console.log(answer);
-      // console.log(this.question[index].correctAnswer);
-      console.log("indice", index);
+      this.clicked = true;
+      this.indexClicked = index;
+      this.addClass();
       if (answer === this.question[index].correctAnswer) {
+        // console.log("hai indovinato", answer);
+        // console.log("elemento cliccato", index);
         this.playerProgress++;
-        this.startGame();
-        console.log(
-          "risposta esatta il progresso giocatore è",
-          this.playerProgress
-        );
       } else {
         console.log("risposta sbagliata Gioco Terminato");
+      }
+    },
+    addClass(index) {
+      if (this.clicked == true && this.indexClicked === index) {
+        return "animate-flicker";
       }
     },
   },
