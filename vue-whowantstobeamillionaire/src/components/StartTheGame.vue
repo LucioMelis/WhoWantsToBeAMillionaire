@@ -29,7 +29,6 @@
           <div v-if="playerProgress === index" class="answer">
             <div
               class="single-answer col-5 background-logo"
-              :class="this.typeAnswer === 1 ? addClassTrue() : addClassFalse()"
               v-for="(answer, indiceElemento) in item.answer"
               :key="indiceElemento"
               @click="clickedAnswer(answer, index, indiceElemento)"
@@ -67,7 +66,7 @@ export default {
       currentQuestion: 0,
       playerProgress: 0,
       question: [],
-      typeAnswer: 0,
+      typeAnswer: undefined,
     };
   },
   mounted() {
@@ -108,9 +107,9 @@ export default {
     clickedAnswer(answer, index, indiceAnswer) {
       console.log(indiceAnswer);
       if (answer === this.question[index].correctAnswer) {
-        this.typeAnswer = 1;
+        this.addClassTrue();
       } else {
-        this.typeAnswer = 2;
+        this.addClassFalse();
         console.log("risposta sbagliata Gioco Terminato");
       }
     },
