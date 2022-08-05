@@ -28,14 +28,11 @@
           <!-- Container delle risposte  -->
           <div v-if="playerProgress === index" class="answer">
             <div
-              :class="[
-                'single-answer',
-                'col-5 background-logo',
-                addClass(index),
-              ]"
+              class="single-answer col-5 background-logo"
+              :class="this.typeAnswer === 1 ? addClassTrue() : addClassFalse()"
               v-for="(answer, indiceElemento) in item.answer"
               :key="indiceElemento"
-              @click="clickedAnswer(answer, index)"
+              @click="clickedAnswer(answer, index, indiceElemento)"
             >
               <p>
                 {{ answer }}
@@ -70,8 +67,7 @@ export default {
       currentQuestion: 0,
       playerProgress: 0,
       question: [],
-      clicked: false,
-      indexClicked: 0,
+      typeAnswer: 0,
     };
   },
   mounted() {
@@ -109,22 +105,20 @@ export default {
       }
       console.log(this.question);
     },
-    clickedAnswer(answer, index) {
-      this.clicked = true;
-      this.indexClicked = index;
-      this.addClass();
+    clickedAnswer(answer, index, indiceAnswer) {
+      console.log(indiceAnswer);
       if (answer === this.question[index].correctAnswer) {
-        // console.log("hai indovinato", answer);
-        // console.log("elemento cliccato", index);
-        this.playerProgress++;
+        this.typeAnswer = 1;
       } else {
+        this.typeAnswer = 2;
         console.log("risposta sbagliata Gioco Terminato");
       }
     },
-    addClass(index) {
-      if (this.clicked == true && this.indexClicked === index) {
-        return "animate-flicker";
-      }
+    addClassTrue() {
+      return "animate-flicker";
+    },
+    addClassFalse() {
+      return "animate-flicker";
     },
   },
 };
