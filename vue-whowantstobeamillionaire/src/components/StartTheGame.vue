@@ -113,11 +113,16 @@ export default {
       }
       console.log(this.question);
     },
+    waitingAnswer(indiceAnswer) {
+      this.typeAnswer = indiceAnswer;
+    },
     clickedAnswer(answer, indexObject, indiceAnswer) {
       console.log(indiceAnswer);
       if (answer === this.question[indexObject].correctAnswer) {
         console.log("risposta esatta");
-        this.typeAnswer = indiceAnswer;
+        let blink = setInterval(this.waitingAnswer(indiceAnswer), 2000);
+        clearInterval(blink);
+        console.log("siamo qui dopo il clearInterval");
         this.stepProgress = indexObject;
       } else {
         console.log("risposta sbagliata Gioco Terminato");
@@ -136,7 +141,6 @@ export default {
   // Prova colore sezioni da eliminare
   color: white;
   .section-progress {
-    border: 1px dashed red;
     flex-grow: 1;
     .help {
       padding: 5px 10px 5px 10px;
@@ -147,7 +151,6 @@ export default {
     }
   }
   .section-question {
-    border: 1px dashed red;
     flex-grow: 2;
     .container-question {
       width: 100%;
