@@ -27,6 +27,10 @@ li {
     background-color: #0e0f8c;
 }
 
+.correct {
+    background-color: orange;
+}
+
 // CLASSE DIV PER LA RISPOSTA CLICCATA
 .animate-flicker {
     -webkit-animation: flickerAnimation .5s infinite;

@@ -10,9 +10,13 @@
       <!-- Scalata per il Milione -->
       <ul class="d-flex flex-column flex-wrap">
         <li
-          v-for="(jackpot, index) in jackpots"
-          :key="index"
-          class="text-center mx-3"
+          v-for="(jackpot, indexJackpot) in jackpots"
+          :key="indexJackpot"
+          :class="[
+            'text-center',
+            'mx-3',
+            { correct: stepProgress === indexJackpot },
+          ]"
         >
           {{ jackpot }} &euro;
         </li>
@@ -28,7 +32,11 @@
           <!-- Container delle risposte  -->
           <div v-if="playerProgress === index" class="answer">
             <div
-              class="single-answer col-5 background-logo"
+              :class="[
+                'single-answer',
+                'col-5 background-logo',
+                { 'animate-flicker': typeAnswer == indiceElemento },
+              ]"
               v-for="(answer, indiceElemento) in item.answer"
               :key="indiceElemento"
               @click="clickedAnswer(answer, index, indiceElemento)"
@@ -66,7 +74,8 @@ export default {
       currentQuestion: 0,
       playerProgress: 0,
       question: [],
-      typeAnswer: undefined,
+      typeAnswer: null,
+      stepProgress: null,
     };
   },
   mounted() {
@@ -104,20 +113,16 @@ export default {
       }
       console.log(this.question);
     },
-    clickedAnswer(answer, index, indiceAnswer) {
+    clickedAnswer(answer, indexObject, indiceAnswer) {
       console.log(indiceAnswer);
-      if (answer === this.question[index].correctAnswer) {
-        this.addClassTrue();
+      if (answer === this.question[indexObject].correctAnswer) {
+        console.log("risposta esatta");
+        this.typeAnswer = indiceAnswer;
+        this.stepProgress = indexObject;
       } else {
-        this.addClassFalse();
         console.log("risposta sbagliata Gioco Terminato");
+        this.typeAnswer = indiceAnswer;
       }
-    },
-    addClassTrue() {
-      return "animate-flicker";
-    },
-    addClassFalse() {
-      return "animate-flicker";
     },
   },
 };
