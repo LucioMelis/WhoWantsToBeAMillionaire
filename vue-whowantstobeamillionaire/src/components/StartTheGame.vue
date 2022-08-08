@@ -38,7 +38,12 @@
               :class="[
                 'single-answer',
                 'col-5 background-logo',
-                { 'animate-flicker': typeAnswer == indiceElemento },
+                clicked ? 'not-click' : '',
+                {
+                  'animate-flicker': typeAnswer == indiceElemento,
+                  'background-correct': answerCorrect == indiceElemento,
+                  'background-wrong': answerWrong == indiceElemento,
+                },
               ]"
               v-for="(answer, indiceElemento) in item.answer"
               :key="indiceElemento"
@@ -74,10 +79,12 @@ export default {
         "300.000",
         "1.000.000",
       ],
-      currentQuestion: 0,
       playerProgress: 0,
       question: [],
       typeAnswer: null,
+      answerCorrect: null,
+      answerWrong: null,
+      clicked: false,
     };
   },
   mounted() {
@@ -116,17 +123,26 @@ export default {
       console.log(this.question);
     },
     clickedAnswer(answer, indexObject, indiceAnswer) {
-      console.log(indiceAnswer);
-      if (answer === this.question[indexObject].correctAnswer) {
-        console.log("risposta esatta");
-        // rapporto per l'animazione
-        this.typeAnswer = indiceAnswer;
-        // prossima domanda
-        this.playerProgress++;
-      } else {
-        console.log("risposta sbagliata Gioco Terminato");
-        this.typeAnswer = indiceAnswer;
-      }
+      // rapporto per aggiunta classe animata
+      this.typeAnswer = indiceAnswer;
+      this.clicked = true;
+      setTimeout(() => {
+        this.typeAnswer = null;
+        if (answer === this.question[indexObject].correctAnswer) {
+          console.log("risposta esatta");
+          this.clicked = false;
+          this.answerCorrect = indiceAnswer;
+          setTimeout(() => {
+            this.answerCorrect = null;
+            // prossima domanda
+            this.playerProgress++;
+          }, 2000);
+        } else {
+          this.clicked = false;
+          this.answerWrong = indiceAnswer;
+          console.log("risposta sbagliata Gioco Terminato");
+        }
+      }, 4000);
     },
   },
 };

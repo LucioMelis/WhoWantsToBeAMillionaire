@@ -14,14 +14,6 @@
     background-color: #0e0f8c;
 }
 
-.background-correct {
-    background-color: rgb(84, 184, 84);
-}
-
-.background-wrong {
-    background-color: rgb(225, 40, 40);
-}
-
 ul,
 li {
     list-style-type: none !important;
@@ -37,6 +29,18 @@ li {
 
 .current-step {
     background-color: orange;
+}
+
+.background-correct {
+    background-color: rgb(84, 184, 84);
+}
+
+.background-wrong {
+    background-color: rgb(225, 40, 40);
+}
+
+.not-click {
+    opacity: .2;
 }
 
 // CLASSE DIV PER LA RISPOSTA CLICCATA
