@@ -15,7 +15,10 @@
           :class="[
             'text-center',
             'mx-3',
-            { correct: stepProgress === indexJackpot },
+            {
+              'current-step': playerProgress === indexJackpot,
+              'background-correct': playerProgress > indexJackpot,
+            },
           ]"
         >
           {{ jackpot }} &euro;
@@ -75,7 +78,6 @@ export default {
       playerProgress: 0,
       question: [],
       typeAnswer: null,
-      stepProgress: null,
     };
   },
   mounted() {
@@ -113,17 +115,14 @@ export default {
       }
       console.log(this.question);
     },
-    waitingAnswer(indiceAnswer) {
-      this.typeAnswer = indiceAnswer;
-    },
     clickedAnswer(answer, indexObject, indiceAnswer) {
       console.log(indiceAnswer);
       if (answer === this.question[indexObject].correctAnswer) {
         console.log("risposta esatta");
-        let blink = setInterval(this.waitingAnswer(indiceAnswer), 2000);
-        clearInterval(blink);
-        console.log("siamo qui dopo il clearInterval");
-        this.stepProgress = indexObject;
+        // rapporto per l'animazione
+        this.typeAnswer = indiceAnswer;
+        // prossima domanda
+        this.playerProgress++;
       } else {
         console.log("risposta sbagliata Gioco Terminato");
         this.typeAnswer = indiceAnswer;
