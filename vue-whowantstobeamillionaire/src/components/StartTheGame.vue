@@ -1,7 +1,7 @@
 <template>
   <div class="play">
     <!-- SEZIONE SCALATA -->
-    <div class="section-progress scale-up-ver-center">
+    <div class="section-progress col-4 scale-up-ver-center">
       <!-- Aiuti da casa  -->
       <div class="d-flex flex-wrap justify-content-around py-4">
         <div class="help" @click="helpFromHome()">Aiuto da casa</div>
@@ -26,7 +26,7 @@
       </ul>
     </div>
     <!-- SEZIONE DOMANDE  -->
-    <div class="section-question">
+    <div class="section-question col-8">
       <div class="container-question scale-up-hor-right">
         <div v-for="(item, index) in question" :key="item + index">
           <h4 v-if="playerProgress === index" class="question background-logo">
@@ -178,7 +178,6 @@ export default {
   // Prova colore sezioni da eliminare
   color: white;
   .section-progress {
-    flex-grow: 1;
     .help {
       padding: 5px 10px 5px 10px;
       border: 2px solid white;
@@ -188,7 +187,6 @@ export default {
     }
   }
   .section-question {
-    flex-grow: 2;
     .container-question {
       width: 100%;
       height: 100%;

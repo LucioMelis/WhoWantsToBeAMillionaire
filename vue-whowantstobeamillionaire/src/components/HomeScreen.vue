@@ -7,7 +7,7 @@
       <h4 class="focus-in-contract-bck">Clicca per iniziare il gioco</h4>
       <div class="mt-5">
         <button
-          @click="$emit('onChangeBoolean', start)"
+          @click="$emit('onChangeBoolean', start), goMusic()"
           class="btn lm-btn rotate-scale-down"
         >
           Inizia il Gioco
@@ -18,10 +18,16 @@
 </template>
 
 <script>
+import track from "../assets/track.mp3";
 export default {
   name: "HomeScreen",
   props: {
     start: Boolean,
+  },
+  methods: {
+    goMusic() {
+      new Audio(track).play();
+    },
   },
 };
 </script>
