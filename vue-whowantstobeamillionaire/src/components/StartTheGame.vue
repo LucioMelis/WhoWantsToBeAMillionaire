@@ -146,15 +146,25 @@ export default {
       }, 4000);
     },
     helpFromHome() {
+      let correct = null;
+      let indiceOggetto = null;
+      let indiceRisposta = null;
       let currentQuestion = this.playerProgress;
       this.question.forEach(function (item, index) {
         if (currentQuestion == index) {
-          console.log(item);
-          if (item.answer.includes(item.correctAnswer)) {
-            console.log("ci siamo");
-          }
+          // console.log(item);
+          indiceOggetto = index;
+          item.answer.forEach(function (element, indice) {
+            // console.log(element, indice);
+            if (element == item.correctAnswer) {
+              correct = element;
+              indiceRisposta = indice;
+            }
+          });
         }
       });
+      // console.log(correct, indiceOggetto, indiceRisposta);
+      this.clickedAnswer(correct, indiceOggetto, indiceRisposta);
     },
   },
 };
