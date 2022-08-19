@@ -4,7 +4,7 @@
     <div class="section-progress scale-up-ver-center">
       <!-- Aiuti da casa  -->
       <div class="d-flex flex-wrap justify-content-around py-4">
-        <div class="help">Aiuto da casa</div>
+        <div class="help" @click="helpFromHome()">Aiuto da casa</div>
         <div class="help">50 : 50</div>
       </div>
       <!-- Scalata per il Milione -->
@@ -85,6 +85,7 @@ export default {
       answerCorrect: null,
       answerWrong: null,
       clicked: false,
+      autoReplay: null,
     };
   },
   mounted() {
@@ -143,6 +144,17 @@ export default {
           console.log("risposta sbagliata Gioco Terminato");
         }
       }, 4000);
+    },
+    helpFromHome() {
+      let currentQuestion = this.playerProgress;
+      this.question.forEach(function (item, index) {
+        if (currentQuestion == index) {
+          console.log(item);
+          if (item.answer.includes(item.correctAnswer)) {
+            console.log("ci siamo");
+          }
+        }
+      });
     },
   },
 };
