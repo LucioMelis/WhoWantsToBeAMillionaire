@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import track from "../assets/track.mp3";
+// import track from "../assets/track.mp3";
 export default {
   name: "HomeScreen",
   props: {
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     goMusic() {
-      new Audio(track).play();
+      // new Audio(track).play();
     },
   },
 };

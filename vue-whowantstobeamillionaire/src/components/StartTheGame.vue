@@ -4,7 +4,12 @@
     <div class="section-progress col-4 scale-up-ver-center">
       <!-- Aiuti da casa  -->
       <div class="d-flex flex-wrap justify-content-around py-4">
-        <div class="help" @click="helpFromHome()">Aiuto da casa</div>
+        <div
+          :class="['help', !bonusHelp ? 'not-click' : '']"
+          @click="helpFromHome()"
+        >
+          Aiuto da casa
+        </div>
         <div class="help">50 : 50</div>
       </div>
       <!-- Scalata per il Milione -->
@@ -85,7 +90,7 @@ export default {
       answerCorrect: null,
       answerWrong: null,
       clicked: false,
-      autoReplay: null,
+      bonusHelp: true,
     };
   },
   mounted() {
@@ -146,6 +151,7 @@ export default {
       }, 4000);
     },
     helpFromHome() {
+      this.bonusHelp = false;
       let correct = null;
       let indiceOggetto = null;
       let indiceRisposta = null;
