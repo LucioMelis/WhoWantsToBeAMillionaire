@@ -41,6 +41,7 @@ li {
 
 .not-click {
     opacity: .2;
+    pointer-events: none;
 }
 
 // CLASSE DIV PER LA RISPOSTA CLICCATA
